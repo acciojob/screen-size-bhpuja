@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Screen Size</title>
-    <style>
-        /* CSS for styling */
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-
-        #sizeInfo {
-            background-color: #fff;
-            border: 2px solid #000;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Size</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #sizeInfo {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <div id="sizeInfo">
-        <h1 id="sizeDisplay">Width: 0, Height: 0</h1>
-    </div>
+  <div id="sizeInfo">
+    <h1>Width: 0 and Height: 0</h1>
+  </div>
 
-    <script>
-        // Function to update the size information
-        function updateSize() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            document.getElementById("sizeDisplay").textContent = `Width: ${width}, Height: ${height}`;
-        }
+  <script>
+    // Function to update the screen size
+    function updateScreenSize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const sizeInfoDiv = document.getElementById('sizeInfo');
+      sizeInfoDiv.innerHTML = `<h1>Width: ${width} and Height: ${height}</h1>`;
+    }
 
-        // Update the size on window resize
-        window.addEventListener('resize', updateSize);
+    // Update size on load
+    updateScreenSize();
 
-        // Initial call to set the size when the page loads
-        updateSize();
-    </script>
+    // Add event listener for window resize
+    window.addEventListener('resize', updateScreenSize);
+  </script>
 </body>
 </html>
+
