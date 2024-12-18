@@ -4,54 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Screen Size</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f0f0;
+  <script>
+    function updateSize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const sizeInfo = document.getElementById("sizeInfo");
+      sizeInfo.innerHTML = `<h1>Width: ${width} and Height: ${height}</h1>`;
     }
-    #sizeInfo {
-      text-align: center;
-      padding: 20px;
-      background: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      font-size: 24px;
-      color: #333;
-      margin: 0;
-    }
-  </style>
+
+    window.addEventListener("resize", updateSize);
+    window.addEventListener("load", updateSize);
+  </script>
 </head>
 <body>
   <div id="sizeInfo">
-    <h1>Width: 0 and Height: 0</h1>
+    <!-- The width and height will be dynamically updated here -->
   </div>
-
-  <script>
-    function updateWindowSize() {
-      // Get the div and h1 elements
-      const sizeInfo = document.getElementById('sizeInfo');
-      const h1 = sizeInfo.querySelector('h1');
-
-      // Update the text with the current window dimensions
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      h1.textContent = `Width: ${width} and Height: ${height}`;
-    }
-
-    // Initial call to set the dimensions on page load
-    updateWindowSize();
-
-    // Add an event listener to update dimensions when window is resized
-    window.addEventListener('resize', updateWindowSize);
-  </script>
 </body>
 </html>
+
